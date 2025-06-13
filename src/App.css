@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+:root {
+	--primary_color: rgb(144 3 252);
+	--secondary_color: rgb(206 3 252);
+}
+
+.loginbackgroundcolor {
+	background-image: linear-gradient(to right, var(--primary_color), var(--secondary_color));
+}   
+
+.loginPage{
+    .loginPageForm{
+        background-color: rgb(254, 255, 253);   
+        .loginForm{
+    }
+    }
+    .loginLogoForm{
+
+    }
+}

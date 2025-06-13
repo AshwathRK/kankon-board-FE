@@ -2,6 +2,7 @@ import { useEffect, useState, createContext } from 'react';
 import axios from 'axios';
 import { Route, Routes } from 'react-router-dom';
 import Login from '../components/Login';
+import SignUp from '../components/SignUp';
 import UserDetails from '../components/UserDetails';
 import './App.css';
 
@@ -37,10 +38,11 @@ function App() {
     }, [serverUrl]);
 
     return (
-        <AppContext.Provider value={{ userData, setUserData }}>
+        <AppContext.Provider value={{ userData, setUserData, setIsAuthenticated  }}>
             <Routes>
                 <Route path="/" element={isAuthenticated ? <UserDetails /> : <Login />} />
                 <Route path="/login" element={isAuthenticated ? <UserDetails /> : <Login />} />
+                <Route path="/signup" element={isAuthenticated ? <UserDetails /> : <SignUp/>} />
                 <Route path="/user" element={isAuthenticated ? <UserDetails /> : <Login />} />
             </Routes>
         </AppContext.Provider>
