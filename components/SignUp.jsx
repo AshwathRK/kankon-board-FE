@@ -4,7 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
 
 export default function Signup() {
-    const [serverUrl] = useState('http://password-reset-qx8n.onrender.com/api');
+    const [serverUrl] = useState('https://password-reset-qx8n.onrender.com/api');
     const [step, setStep] = useState(1);
     const navigate = useNavigate();
 

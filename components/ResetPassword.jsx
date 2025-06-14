@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export default function ResetPassword() {
     const navigate = useNavigate();
-    const [serverUrl] = useState('http://password-reset-qx8n.onrender.com/api');
+    const [serverUrl] = useState('https://password-reset-qx8n.onrender.com/api');
     const [step, setStep] = useState(1);
     const [email, setEmail] = useState('');
     const [otp, setOtp] = useState('');

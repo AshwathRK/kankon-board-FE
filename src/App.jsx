@@ -12,7 +12,7 @@ export const AppContext = createContext();
 function App() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [userData, setUserData] = useState(null);
-    const [serverUrl] = useState('http://password-reset-qx8n.onrender.com/api');
+    const [serverUrl] = useState('https://password-reset-qx8n.onrender.com/api');
 
     useEffect(() => {
         axios.get(serverUrl, {
