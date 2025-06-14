@@ -12,7 +12,7 @@ export default function Login() {
     const { setUserData, setIsAuthenticated } = useContext(AppContext);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [serverUrl] = useState('http://localhost:3000/api');
+    const [serverUrl] = useState('https://password-reset-qx8n.onrender.com/api');
     const navigate = useNavigate();
     const [notification, setNotify] = useState("")
     const [showPassword, setShowPassword] = useState(false);
