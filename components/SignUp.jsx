@@ -92,7 +92,7 @@ export default function Signup() {
 
     return (
         <div className='loginPage w-full h-206 flex justify-center items-center loginbackgroundcolor'>
-            <div className='loginPageForm w-340 h-180 bg-red-200 flex rounded'>
+            <div className='loginPageForm w-340 h-180 bg-blue-100 flex rounded'>
                 <div className='w-2/5 flex justify-center items-center border-r-1 border-gray-300'>
                     <form className='loginForm flex flex-col h-130 w-100' onSubmit={handleSubmit}>
                         <h1 className='font-bold text-4xl'>Sign Up</h1>
@@ -186,7 +186,7 @@ export default function Signup() {
                 </div>
 
                 <div className='w-3/5 flex justify-center items-center'>
-                    <img src="public/Login_Logo.png" className="w-180" alt="login logo" />
+                    <img src="public/signup.png" className="w-180" alt="login logo" />
                 </div>
             </div>
             <ToastContainer />
