@@ -7,6 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export default function ResetPassword() {
     const navigate = useNavigate();
+    const [serverUrl] = useState('password-reset-qx8n.onrender.com/api');
     const [step, setStep] = useState(1);
     const [email, setEmail] = useState('');
     const [otp, setOtp] = useState('');
@@ -22,7 +23,7 @@ export default function ResetPassword() {
         e.preventDefault();
         setIsLoading(true); // start loader
         try {
-            await axios.post('http://localhost:3000/api/sendresetotp', { email });
+            await axios.post(`${serverUrl}/sendresetotp`, { email });
             toast.success('OTP sent to your email');
             setIsEmailSent(true);
         } catch (error) {
@@ -36,7 +37,7 @@ export default function ResetPassword() {
     const handleOtpSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:3000/api/verifyotp', { email, otp });
+            const response = await axios.post(`${serverUrl}/verifyotp`, { email, otp });
             if (response.status === 200) {
                 toast.success('OTP verified');
                 setStep(2);
@@ -52,7 +53,7 @@ export default function ResetPassword() {
         e.preventDefault();
         
         try {
-            const response = await axios.post('http://localhost:3000/api/resetpassword', {
+            const response = await axios.post(`${serverUrl}/resetpassword`, {
                 email,
                 password,
                 confirmPassword
