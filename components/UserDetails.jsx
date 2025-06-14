@@ -12,7 +12,7 @@ export default function UserDetails(props) {
     const originalUser = props.UserDetails?.user;
     const [user, setUser] = useState(originalUser);
     const [editing, setEditing] = useState(false);
-    const serverUrl = 'password-reset-qx8n.onrender.com/api';
+    const serverUrl = 'http://localhost:3000/api';
 
     if (!user) {
         return (
