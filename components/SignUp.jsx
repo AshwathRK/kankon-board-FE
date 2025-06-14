@@ -186,7 +186,7 @@ export default function Signup() {
                 </div>
 
                 <div className='w-3/5 flex justify-center items-center'>
-                    <img src="public/signup.png" className="w-180" alt="login logo" />
+                    <img src="/signup.png" className="w-180" alt="login logo" />
                 </div>
             </div>
             <ToastContainer />

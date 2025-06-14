@@ -179,7 +179,7 @@ export default function ResetPassword() {
                 </div>
 
                 <div className='w-3/5 flex justify-center items-center'>
-                    <img src="public/Password_reset.png" className="w-180" alt="logo" />
+                    <img src="/Password_reset.png" className="w-180" alt="logo" />
                 </div>
             </div>
             <ToastContainer />

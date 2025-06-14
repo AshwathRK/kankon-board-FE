@@ -98,7 +98,7 @@ export default function Login() {
                     </form>
                 </div>
                 <div className='w-3/5 flex justify-center items-center'>
-                    <img src="public\Login_Logo.png" className="w-180" alt="login logo" />
+                    <img src="/Login_Logo.png" className="w-180" alt="login logo" />
                 </div>
             </div>
             <ToastContainer />
