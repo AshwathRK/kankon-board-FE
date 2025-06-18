@@ -7,12 +7,15 @@ import { Link } from 'react-router-dom';
 
 
 
+const serverUrl = import.meta.env.VITE_SERVER_URL;
+
+
+
 export default function Login() {
 
     const { setUserData, setIsAuthenticated } = useContext(AppContext);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [serverUrl] = useState('https://password-reset-qx8n.onrender.com/api');
     const navigate = useNavigate();
     const [notification, setNotify] = useState("")
     const [showPassword, setShowPassword] = useState(false);
@@ -50,14 +53,14 @@ export default function Login() {
 
 
     return (
-        <div className='loginPage w-full h-206 flex justify-center items-center loginbackgroundcolor'>
+        <div className='loginPage w-full h-206 flex justify-center items-center bg-gray-200'>
             <div className='loginPageForm w-340 h-180 bg-blue-100 flex rounded'>
                 <div className='w-2/5 flex justify-center items-center border-r-1 border-gray-300'>
                     <form className='loginForm flex flex-col justify-between h-80' onSubmit={handleSubmit}>
                         <h1 className='font-bold text-4xl'>Login</h1>
                         <h2 className='font-bold text-lg text-gray-500'>Doesn't have an account yet?
-                            <Link to={'./signup'}>
-                                <a className='text-blue-500 px-2' href="">Sign Up</a>
+                            <Link to={'/signup'} className="text-blue-500 px-2">
+                                Sign Up
                             </Link>
                         </h2>
                         <div className='flex flex-col'>
@@ -88,9 +91,10 @@ export default function Login() {
                                 {showPassword ? "🙈" : "👁️"}
                             </button>
                         </div>
-                        <Link to={'./resetpassword'}>
-                        <a className='text-blue-500' href="">Forget password</a>
+                        <Link to="/resetpassword" className="text-blue-500">
+                            Forget password
                         </Link>
+
                         <button type="submit" className='loginbackgroundcolor text-white h-8 font-bold rounded hover:opacity-80 active:opacity-60 '>
                             Login
                         </button>

@@ -5,14 +5,14 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../src/App'; // Adjust path as needed
 
+const serverUrl = import.meta.env.VITE_SERVER_URL;
+
 export default function UserDetails(props) {
     const navigate = useNavigate();
     const { setIsAuthenticated, setUserData } = useContext(AppContext);
-
     const originalUser = props.UserDetails?.user;
     const [user, setUser] = useState(originalUser);
     const [editing, setEditing] = useState(false);
-    const serverUrl = 'https://password-reset-qx8n.onrender.com/api';
 
     if (!user) {
         return (

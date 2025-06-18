@@ -3,8 +3,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
 
+const serverUrl = import.meta.env.VITE_SERVER_URL;
+
 export default function Signup() {
-    const [serverUrl] = useState('https://password-reset-qx8n.onrender.com/api');
     const [step, setStep] = useState(1);
     const navigate = useNavigate();
 
@@ -59,6 +60,7 @@ export default function Signup() {
                 { withCredentials: true }
             );
 
+            // console.log(serverUrl)
             toast.success("Account created successfully. Please log in.");
 
             setTimeout(function () {
@@ -91,7 +93,7 @@ export default function Signup() {
     };
 
     return (
-        <div className='loginPage w-full h-206 flex justify-center items-center loginbackgroundcolor'>
+        <div className='loginPage w-full h-206 flex justify-center items-center bg-gray-200'>
             <div className='loginPageForm w-340 h-180 bg-blue-100 flex rounded'>
                 <div className='w-2/5 flex justify-center items-center border-r-1 border-gray-300'>
                     <form className='loginForm flex flex-col h-130 w-100' onSubmit={handleSubmit}>

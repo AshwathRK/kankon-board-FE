@@ -5,9 +5,11 @@ import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 
+const serverUrl = import.meta.env.VITE_SERVER_URL;
+
+
 export default function ResetPassword() {
     const navigate = useNavigate();
-    const [serverUrl] = useState('https://password-reset-qx8n.onrender.com/api');
     const [step, setStep] = useState(1);
     const [email, setEmail] = useState('');
     const [otp, setOtp] = useState('');
@@ -73,7 +75,7 @@ export default function ResetPassword() {
 
 
     return (
-        <div className='w-full h-screen flex justify-center items-center loginbackgroundcolor loginPage'>
+        <div className='w-full h-screen flex justify-center items-center loginPage bg-gray-200'>
             <div className='w-340 h-180 loginPageForm flex rounded'>
                 <div className='w-2/5 flex justify-center items-center border-r-1 border-gray-400'>
                     <form className='flex flex-col justify-around h-70 w-100' onSubmit={(step === 1 && !isEmailSent) ? handleEmailSubmit : (step === 1 ? handleOtpSubmit : handleResetPassword)}>
