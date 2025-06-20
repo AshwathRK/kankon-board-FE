@@ -34,12 +34,12 @@ export default function Login() {
             setIsAuthenticated(true);
             localStorage.setItem('isAuthenticated', 'true');
             dispatch(addUserDetails(response.data.user));
-            console.log(response.data.user)
+            // console.log(response.data.user)
             toast.success("Login successful!");
             navigate('/user');
         } catch (error) {
             if (error.response) {
-                console.log(error.response.data.message)
+                // console.log(error.response.data.message)
                 toast.error(error.response.data.message || "Login failed");
             } else {
                 toast.error("Network error");
@@ -51,12 +51,10 @@ export default function Login() {
         setPassword('');
     };
 
-    handleSubmit()
-
      return (
-        <div className='loginPage w-full h-206 flex justify-center items-center bg-gray-200'>
-            <div className='loginPageForm w-340 h-180 bg-blue-100 flex rounded'>
-                <div className='w-2/5 flex justify-center items-center border-r-1 border-gray-300'>
+        <div className='loginPage w-full flex justify-center items-center bg-gray-200'>
+            <div className='loginPageForm mx-4 w-340 bg-blue-100 grid rounded'>
+                <div className='flex login justify-center items-center border-r-1 border-gray-300'>
                     <form className='loginForm flex flex-col justify-between h-80' onSubmit={handleSubmit}>
                         <h1 className='font-bold text-4xl'>Login</h1>
                         <h2 className='font-bold text-lg text-gray-500'>Doesn't have an account yet?
@@ -70,6 +68,7 @@ export default function Login() {
                                 className='border rounded px-2 py-1'
                                 type="email"
                                 placeholder='you@example.com'
+                                autoComplete="username"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
 
@@ -81,6 +80,7 @@ export default function Login() {
                                 className='border rounded px-2 py-1 font-italic'
                                 type={showPassword ? 'text' : 'password'}
                                 placeholder='Enter 12 characters or more'
+                                autoComplete="current-password"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                             />
@@ -102,8 +102,8 @@ export default function Login() {
 
                     </form>
                 </div>
-                <div className='w-3/5 flex justify-center items-center'>
-                    <img src="/Login_Logo.png" className="w-180" alt="login logo" />
+                <div className='flex loginImage justify-center items-center'>
+                    <img src="/Login_Logo.png" className="w-180 image" alt="login logo" />
                 </div>
             </div>
             <ToastContainer />

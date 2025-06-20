@@ -37,14 +37,14 @@ export default function App() {
             .finally(() => setLoading(false));
     }, []);
 
-    console.log(isAuthenticated)
+    // console.log(isAuthenticated)
 
     if (loading) {
     return <div className="text-center mt-10 font-semibold text-gray-600">Loading...</div>;
   }
 
     const allCookies = document.cookie;
-    console.log(allCookies)
+    // console.log(allCookies)
 
   return (
     <Provider store={store}>

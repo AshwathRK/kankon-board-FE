@@ -75,10 +75,10 @@ export default function ResetPassword() {
 
 
     return (
-        <div className='w-full h-screen flex justify-center items-center loginPage bg-gray-200'>
-            <div className='w-340 h-180 loginPageForm flex rounded'>
-                <div className='w-2/5 flex justify-center items-center border-r-1 border-gray-400'>
-                    <form className='flex flex-col justify-around h-70 w-100' onSubmit={(step === 1 && !isEmailSent) ? handleEmailSubmit : (step === 1 ? handleOtpSubmit : handleResetPassword)}>
+        <div className='w-full h-206  loginPage h-screen flex justify-center items-center loginPage bg-gray-200'>
+            <div className='w-340 loginPageForm flex rounded'>
+                <div className='w-2/5 login flex justify-center items-center border-r-1 border-gray-400'>
+                    <form className='flex loginForm flex-col justify-around h-70 w-100' onSubmit={(step === 1 && !isEmailSent) ? handleEmailSubmit : (step === 1 ? handleOtpSubmit : handleResetPassword)}>
                         <h1 className='font-bold text-4xl'>Reset Password</h1>
                         <h2 className='font-bold text-lg text-gray-500'>
                             Go back to
@@ -180,8 +180,8 @@ export default function ResetPassword() {
                     </form>
                 </div>
 
-                <div className='w-3/5 flex justify-center items-center'>
-                    <img src="/Password_reset.png" className="w-180" alt="logo" />
+                <div className='w-3/5 loginImage flex justify-center items-center'>
+                    <img src="/Password_reset.png" className="w-180 image" alt="logo" />
                 </div>
             </div>
             <ToastContainer />
