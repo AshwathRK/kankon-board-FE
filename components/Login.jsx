@@ -21,7 +21,7 @@ export default function Login() {
 
     // let email = "as@mailinator.com"
     // let password = 'Dindigul@123'
-    
+
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
@@ -51,21 +51,24 @@ export default function Login() {
         setPassword('');
     };
 
-     return (
+    return (
         <div className='loginPage w-full flex justify-center items-center bg-gray-200'>
             <div className='loginPageForm mx-4 w-340 bg-blue-100 grid rounded'>
                 <div className='flex login justify-center items-center border-r-1 border-gray-300'>
-                    <form className='loginForm flex flex-col justify-between h-80' onSubmit={handleSubmit}>
-                        <h1 className='font-bold text-4xl'>Login</h1>
-                        <h2 className='font-bold text-lg text-gray-500'>Doesn't have an account yet?
-                            <Link to={'/signup'} className="text-blue-500 px-2">
+                    <form className='loginForm flex flex-col justify-between h-90' onSubmit={handleSubmit}>
+                        <div>
+                            <h1 className='font-bold text-4xl poppins-bold'>Welcome back</h1>
+                            <h4 className='font-bold text-xl poppins-regular'>Login to your account</h4>
+                        </div>
+                        <h2 className='font-bold text-lg text-gray-500 poppins-semibold'>Doesn't have an account yet?
+                            <Link to={'/signup'} className="text-blue-500 px-2 poppins-bold">
                                 Sign Up
                             </Link>
                         </h2>
                         <div className='flex flex-col'>
-                            <label>Email Address:</label>
+                            <label className='poppins-regular'>Email Address:</label>
                             <input
-                                className='border rounded px-2 py-1'
+                                className='border rounded px-2 py-1 poppins-regular'
                                 type="email"
                                 placeholder='you@example.com'
                                 autoComplete="username"
@@ -75,9 +78,9 @@ export default function Login() {
                             />
                         </div>
                         <div className='flex flex-col relative'>
-                            <label>Password:</label>
+                            <label className='poppins-regular'>Password:</label>
                             <input
-                                className='border rounded px-2 py-1 font-italic'
+                                className='border rounded px-2 py-1 poppins-regular'
                                 type={showPassword ? 'text' : 'password'}
                                 placeholder='Enter 12 characters or more'
                                 autoComplete="current-password"
@@ -92,18 +95,21 @@ export default function Login() {
                                 {showPassword ? "🙈" : "👁️"}
                             </button>
                         </div>
-                        <Link to="/resetpassword" className="text-blue-500">
+                        <Link to="/resetpassword" className="text-blue-500 poppins-semibold">
                             Forget password
                         </Link>
 
-                        <button type="submit" className='loginbackgroundcolor text-white h-8 font-bold rounded hover:opacity-80 active:opacity-60 '>
+                        <button type="submit" className='loginbackgroundcolor text-white h-8 font-bold rounded hover:opacity-80 active:opacity-60 poppins-semibold'>
                             Login
                         </button>
 
                     </form>
                 </div>
-                <div className='flex loginImage justify-center items-center'>
+                <div className='flex flex-col loginImage justify-center items-center'>
+
+                    <h1 className='font-bold text-4xl poppins-extrabold text-white'>Kanban Flow</h1>
                     <img src="/Login_Logo.png" className="w-180 image" alt="login logo" />
+                    <h4 className='font-bold text-xl poppins-bold text-white'>Organize your work. Stay productive.</h4>
                 </div>
             </div>
             <ToastContainer />
