@@ -1,27 +1,27 @@
-import { useEffect, useState, useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
 import { AppContext } from '../src/App';
+import { toast, ToastContainer } from 'react-toastify';
 import axios from 'axios';
-import { ToastContainer, toast } from 'react-toastify';
-import { Link } from 'react-router-dom';
-
-
+import { addUserDetails } from '../src/slices/userslices';
 
 const serverUrl = import.meta.env.VITE_SERVER_URL;
 
-
-
 export default function Login() {
 
-    const { setUserData, setIsAuthenticated } = useContext(AppContext);
+    const { setIsAuthenticated } = useContext(AppContext);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
     const [notification, setNotify] = useState("")
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+    const dispatch = useDispatch()
 
-
+    // let email = "as@mailinator.com"
+    // let password = 'Dindigul@123'
+    
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
@@ -32,17 +32,18 @@ export default function Login() {
             );
 
             setIsAuthenticated(true);
-            setUserData(response.data);
-            toast.success("Login successful!"); // ✅ Show toast here
+            localStorage.setItem('isAuthenticated', 'true');
+            dispatch(addUserDetails(response.data.user));
+            console.log(response.data.user)
+            toast.success("Login successful!");
             navigate('/user');
-
         } catch (error) {
             if (error.response) {
-                console.error("Login failed:", error.response.data);
-                toast.error(error.response.data.message || "Login failed"); // ✅ Error toast
+                console.log(error.response.data.message)
+                toast.error(error.response.data.message || "Login failed");
             } else {
-                console.error("Request error:", error.message);
-                toast.error("Network error"); // ✅ Error toast
+                toast.error("Network error");
+                // console.log(error)
             }
         }
 
@@ -50,9 +51,9 @@ export default function Login() {
         setPassword('');
     };
 
+    handleSubmit()
 
-
-    return (
+     return (
         <div className='loginPage w-full h-206 flex justify-center items-center bg-gray-200'>
             <div className='loginPageForm w-340 h-180 bg-blue-100 flex rounded'>
                 <div className='w-2/5 flex justify-center items-center border-r-1 border-gray-300'>
@@ -109,3 +110,4 @@ export default function Login() {
         </div>
     )
 }
+
