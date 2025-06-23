@@ -94,24 +94,24 @@ export default function Signup() {
 
     return (
         <div className='loginPage w-full h-206 flex justify-center bg-gray-200'>
-            <div className='loginPageForm mx-4 w-340 bg-blue-100 grid rounded'>
-                <div className='flex login justify-center border-r-1 border-gray-300 col-span-3'>
+            <div className='loginPageForm mx-4 w-340 bg-blue-100 grid rounded-xl'>
+                <div className='flex login px-5  justify-center border-r-1 border-gray-300 col-span-3'>
                     <form className='loginForm flex flex-col h-130 w-100' onSubmit={handleSubmit}>
 
                         <div>
-                            <h1 className='font-bold text-4xl'>Welcome to KanbanFlow!</h1>
+                            <h1 className='poppins-bold fs-2 primery'>Welcome to KanbanFlow!</h1>
                             {/* <h4 className='font-bold text-xl poppins-regular'>Start managing your tasks more efficiently.</h4> */}
                         </div>    
                         
                         
-                        <h2 className='font-bold text-lg text-gray-500'>
+                        <h2 className='font-bold fs-5 text-gray-400'>
                             Already have an account?
                             <Link to={'/'}><span className='text-blue-500 px-2'>Login</span></Link>
                         </h2>
 
                         {step === 1 && (
                             <div className='flex flex-col mx-2 justify-between h-100'>
-                                <h1 className='font-bold'>Step 1: Personal Info</h1>
+                                <h1 className='font-bold fs-5'>Step 1: Personal Info</h1>
                                 <label>Full Name *</label>
                                 <input type="text" name="fullname" value={formData.fullname} onChange={handleChange} className='border rounded px-2 py-1' />
 
@@ -143,7 +143,7 @@ export default function Signup() {
 
                         {step === 2 && (
                             <div className='flex flex-col mx-2'>
-                                <h1 className='font-bold'>Step 2: Security Info</h1>
+                                <h1 className='font-bold fs-5'>Step 2: Security Info</h1>
 
                                 <label>Security Question *</label>
                                 <input type="text" name="securityQuestion" value={formData.securityQuestion} onChange={handleChange} className='border rounded px-2 py-1' />
@@ -160,7 +160,7 @@ export default function Signup() {
 
                         {step === 3 && (
                             <div className='flex flex-col mx-2'>
-                                <h1 className='font-bold'>Step 3: Contact Info</h1>
+                                <h1 className='font-bold fs-5'>Step 3: Contact Info</h1>
 
 
                                 <label>Gender:</label>
@@ -195,7 +195,7 @@ export default function Signup() {
                     </form>
                 </div>
 
-                <div className='flex flex-col loginImage justify-center items-center col-span-4 col-start-4'>
+                <div className='flex flex-col loginImage justify-center items-center col-span-4 col-start-4 rounded-r-xl'>
                     <h1 className='font-bold text-4xl poppins-extrabold text-white'>Kanban Flow</h1>
                     <img src="/signup.png" className="w-180 image" alt="login logo" />
                     <h4 className='font-bold text-xl poppins-bold text-white'>Start managing your tasks more efficiently.</h4>

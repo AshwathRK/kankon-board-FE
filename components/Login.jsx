@@ -34,16 +34,13 @@ export default function Login() {
             setIsAuthenticated(true);
             localStorage.setItem('isAuthenticated', 'true');
             dispatch(addUserDetails(response.data.user));
-            // console.log(response.data.user)
             toast.success("Login successful!");
             navigate('/user');
         } catch (error) {
             if (error.response) {
-                // console.log(error.response.data.message)
                 toast.error(error.response.data.message || "Login failed");
             } else {
                 toast.error("Network error");
-                // console.log(error)
             }
         }
 
@@ -53,14 +50,14 @@ export default function Login() {
 
     return (
         <div className='loginPage w-full flex justify-center items-center bg-gray-200'>
-            <div className='loginPageForm mx-4 w-340 bg-blue-100 grid rounded'>
-                <div className='flex login justify-center items-center border-r-1 border-gray-300'>
-                    <form className='loginForm flex flex-col justify-between h-90' onSubmit={handleSubmit}>
+            <div className='loginPageForm mx-4 w-340 bg-blue-100 grid rounded-xl'>
+                <div className='flex login px-5 justify-center items-center border-r-1 border-gray-300'>
+                    <form className='loginForm flex flex-col justify-between h-102' onSubmit={handleSubmit}>
                         <div>
-                            <h1 className='font-bold text-4xl poppins-bold'>Welcome back</h1>
-                            <h4 className='font-bold text-xl poppins-regular'>Login to your account</h4>
+                            <h1 className='font-bold text-4xl poppins-extrabold primery'>Welcome back</h1>
+                            <h4 className='font-bold text-xl poppins-bold'>Login to your account</h4>
                         </div>
-                        <h2 className='font-bold text-lg text-gray-500 poppins-semibold'>Doesn't have an account yet?
+                        <h2 className='font-bold fs-5 text-gray-400 poppins-semibold'>Doesn't have an account yet?
                             <Link to={'/signup'} className="text-blue-500 px-2 poppins-bold">
                                 Sign Up
                             </Link>
@@ -105,7 +102,7 @@ export default function Login() {
 
                     </form>
                 </div>
-                <div className='flex flex-col loginImage justify-center items-center'>
+                <div className='flex flex-col loginImage justify-center items-center rounded-r-xl'>
 
                     <h1 className='font-bold text-4xl poppins-extrabold text-white'>Kanban Flow</h1>
                     <img src="/Login_Logo.png" className="w-180 image" alt="login logo" />

@@ -79,8 +79,8 @@ export default function ResetPassword() {
             <div className='w-340 loginPageForm flex rounded'>
                 <div className='w-2/5 login flex justify-center items-center border-r-1 border-gray-400'>
                     <form className='flex loginForm flex-col justify-around h-70 w-100' onSubmit={(step === 1 && !isEmailSent) ? handleEmailSubmit : (step === 1 ? handleOtpSubmit : handleResetPassword)}>
-                        <h1 className='font-bold text-4xl'>Reset Password</h1>
-                        <h2 className='font-bold text-lg text-gray-500'>
+                        <h1 className='font-extrabold text-4xl primery'>Reset Password</h1>
+                        <h2 className='font-bold text-lg text-gray-400'>
                             Go back to
                             <Link to={'/'}><span className='text-blue-500 px-2'>Login</span></Link>
                         </h2>
