@@ -19,9 +19,6 @@ export default function Login() {
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
     const dispatch = useDispatch()
 
-    // let email = "as@mailinator.com"
-    // let password = 'Dindigul@123'
-
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {

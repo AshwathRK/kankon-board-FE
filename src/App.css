@@ -1,220 +1,228 @@
 @import "tailwindcss";
 
 :root {
-  --primary_color: #006A71;
-  --secondary_color: #48A6A7;
-  --midel_color: #9ACBD0;
-  --lower_color: #F2EFE7;
+    --primary_color: #006A71;
+    --secondary_color: #48A6A7;
+    --midel_color: #9ACBD0;
+    --lower_color: #F2EFE7;
 
 }
 
 .primery {
-  color: #006A71;
+    color: #006A71;
+}
+
+.bg_primery {
+    background-color: var(--primary_color);
 }
 
 .secondary {
-  color: #48A6A7;
+    color: #48A6A7;
 }
 
 .midle {
-  color: #9ACBD0;
+    color: #9ACBD0;
+}
+
+.bg_middle {
+    background-color: #9ACBD0;
 }
 
 .lower {
-  color: #F2EFE7;
+    color: #F2EFE7;
 }
 
 .loginbackgroundcolor {
-  background-image: linear-gradient(to right, var(--primary_color), var(--secondary_color));
+    background-image: linear-gradient(to right, var(--primary_color), var(--secondary_color));
 }
 
 
 /* font */
 
 .poppins-thin {
-  font-family: "Poppins", sans-serif;
-  font-weight: 100;
-  font-style: normal;
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: normal;
 }
 
 .poppins-extralight {
-  font-family: "Poppins", sans-serif;
-  font-weight: 200;
-  font-style: normal;
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: normal;
 }
 
 .poppins-light {
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  font-style: normal;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
 }
 
 .poppins-regular {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .poppins-medium {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-style: normal;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
 }
 
 .poppins-semibold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-style: normal;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
 }
 
 .poppins-bold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  font-style: normal;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }
 
 .poppins-extrabold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
-  font-style: normal;
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: normal;
 }
 
 .poppins-black {
-  font-family: "Poppins", sans-serif;
-  font-weight: 900;
-  font-style: normal;
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: normal;
 }
 
 .poppins-thin-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 100;
-  font-style: italic;
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: italic;
 }
 
 .poppins-extralight-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 200;
-  font-style: italic;
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: italic;
 }
 
 .poppins-light-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  font-style: italic;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: italic;
 }
 
 .poppins-regular-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: italic;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: italic;
 }
 
 .poppins-medium-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-style: italic;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: italic;
 }
 
 .poppins-semibold-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-style: italic;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: italic;
 }
 
 .poppins-bold-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  font-style: italic;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: italic;
 }
 
 .poppins-extrabold-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
-  font-style: italic;
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: italic;
 }
 
 .poppins-black-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 900;
-  font-style: italic;
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: italic;
 }
 
 
 .loginPage {
-  background-color: #F2EFE7;
+    background-color: #F2EFE7;
 
-  .loginPageForm {
-    border: 2px solid var(--midel_color);
-    background-color: rgb(254, 255, 253);
-  }
+    .loginPageForm {
+        border: 2px solid var(--midel_color);
+        background-color: rgb(254, 255, 253);
+    }
 
-  .loginImage {
-    background-color: #48A6A7;
-  }
+    .loginImage {
+        background-color: #48A6A7;
+    }
 }
 
 @media only screen and (min-width: 850px) {
-  .loginPage {
-    height: 100vh;
-    align-items: center;
-  }
-
-  .loginPageForm {
-    height: 95%;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-
-    .login {
-      grid-column: span 3 / span 3;
-      align-items: center;
+    .loginPage {
+        height: 100vh;
+        align-items: center;
     }
 
-    .loginImage {
-      grid-column: span 4 / span 4;
-      grid-column-start: 4;
+    .loginPageForm {
+        height: 95%;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+
+        .login {
+            grid-column: span 3 / span 3;
+            align-items: center;
+        }
+
+        .loginImage {
+            grid-column: span 4 / span 4;
+            grid-column-start: 4;
+        }
     }
-  }
 }
 
 @media only screen and (max-width: 850px) {
-  .loginPage {
-    height: 120vh;
-  }
-
-  .loginPageForm {
-    /* height: 900px; */
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(10, 1fr);
-
-    .login {
-      grid-row: span 7 / span 7;
-      grid-row-start: 4;
-      align-items: start;
+    .loginPage {
+        height: 120vh;
     }
 
-    .loginImage {
-      grid-row: span 3 / span 3;
-      grid-column-start: 1;
+    .loginPageForm {
+        /* height: 900px; */
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(10, 1fr);
 
-      .image {
-        max-width: 350px;
-        min-width: 200px;
-        object-fit: cover;
-      }
+        .login {
+            grid-row: span 7 / span 7;
+            grid-row-start: 4;
+            align-items: start;
+        }
+
+        .loginImage {
+            grid-row: span 3 / span 3;
+            grid-column-start: 1;
+
+            .image {
+                max-width: 350px;
+                min-width: 200px;
+                object-fit: cover;
+            }
+        }
     }
-  }
 }
 
 
 
 /* Home page */
 .homePage {
-  height: 100vh;
-  background-color: var(--lower_color);
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(10, 1fr);
-  gap: 8px;
+    height: 100vh;
+    background-color: var(--lower_color);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    gap: 8px;
 }
 
 
@@ -225,17 +233,104 @@
 } */
 
 .title {
-  grid-column: span 5 / span 5;
-  background: var(--secondary_color);
+    grid-column: span 5 / span 5;
+    background-color: var(--primary_color);
 }
 
 .logo {
-  max-width: 100px;
-  min-width: 60px;
+    max-width: 100px;
+    min-width: 60px;
+    filter: brightness(0) invert(1);
+}
+
+.nav-link-custom {
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-link-custom:hover {
+    text-decoration: underline;
+}
+
+.nav-link-custom.active {
+    text-decoration: underline;
 }
 
 .userDetails {
-  grid-column: span 5 / span 5;
-  grid-row: span 9 / span 9;
-  grid-row-start: 2;
+    grid-column: span 5 / span 5;
+    grid-row: span 9 / span 9;
+    grid-row-start: 2;
+}
+
+.project {
+    overflow: hidden;
+    overflow-y: auto;
+    grid-column: span 5 / span 5;
+    grid-row: span 8 / span 8;
+    grid-row-start: 3;
+}
+
+.tableTitle tr th {
+    background-color: var(--secondary_color);
+}
+
+.btnSection {
+    grid-column: span 5 / span 5;
+    grid-row-start: 2;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+    .createProjectBtn {
+        background-color: var(--primary_color);
+        color: white;
+        width: 250px;
+        height: 40px;
+        border-radius: 7px;
+        margin-right: 20px;
+        transition: opacity 0.2s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            height: auto;
+            margin-right: 8px;
+            filter: brightness(0) invert(1);
+        }
+    }
+
+    .createProjectBtn:hover {
+        opacity: 0.85;
+    }
+
+    .createProjectBtn:active {
+        opacity: 0.65;
+    }
+
+}
+
+.delete:hover {
+    filter: contrast(0) brightness(100%);
+}
+
+.update:hover {
+    filter: brightness(0) invert(1);
+}
+
+.nav-link-custom.active {
+    text-decoration: underline;
+}
+
+.tableHover:hover {
+    background-color: gray;
+}
+
+.board {
+    grid-column: span 5 / span 5;
+    grid-row: span 9 / span 9;
+    grid-row-start: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 8px;
 }
