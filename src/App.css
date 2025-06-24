@@ -222,7 +222,7 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(10, 1fr);
-    gap: 8px;
+    /* gap: 8px; */
 }
 
 
@@ -273,39 +273,39 @@
     background-color: var(--secondary_color);
 }
 
+.createProjectBtn {
+    background-color: var(--primary_color);
+    color: white;
+    width: 250px;
+    height: 40px;
+    border-radius: 7px;
+    margin-right: 20px;
+    transition: opacity 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        height: auto;
+        margin-right: 8px;
+        filter: brightness(0) invert(1);
+    }
+}
+
+.createProjectBtn:hover {
+    opacity: 0.85;
+}
+
+.createProjectBtn:active {
+    opacity: 0.65;
+}
+
 .btnSection {
     grid-column: span 5 / span 5;
     grid-row-start: 2;
     display: flex;
     align-items: center;
     justify-content: end;
-
-    .createProjectBtn {
-        background-color: var(--primary_color);
-        color: white;
-        width: 250px;
-        height: 40px;
-        border-radius: 7px;
-        margin-right: 20px;
-        transition: opacity 0.2s;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        img {
-            height: auto;
-            margin-right: 8px;
-            filter: brightness(0) invert(1);
-        }
-    }
-
-    .createProjectBtn:hover {
-        opacity: 0.85;
-    }
-
-    .createProjectBtn:active {
-        opacity: 0.65;
-    }
 
 }
 
@@ -325,12 +325,63 @@
     background-color: gray;
 }
 
+.boardMenus {
+    grid-column: span 5 / span 5;
+    grid-row-start: 2;
+    background-color: var(--lower_color);
+
+}
+
 .board {
     grid-column: span 5 / span 5;
-    grid-row: span 9 / span 9;
-    grid-row-start: 2;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    gap: 8px;
+    grid-row: span 8 / span 8;
+    grid-row-start: 3;
+    background-color: var(--lower_color);
+    border: 2px solid var(--primary_color);
+    margin-bottom: 10px;
+}
+
+.boxModel {
+    width: 400px;
+    flex-shrink: 0;
+    background-color: var(--midel_color);
+    display: flex;
+    /* justify-content: center; */
+    color: white;
+    border: 2px solid var(--primary_color);
+
+    .boardTitle {
+        height: 7%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        background-color: var(--primary_color);
+    }
+}
+
+.card {
+    min-height: '7rem';
+    overflow: hidden;
+}
+
+.my-scrollbar::-webkit-scrollbar {
+    width: 3px;
+}
+
+.my-scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.my-scrollbar::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+.my-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.cardIcons {
+    filter: brightness(0) invert(1);
+    cursor: pointer;
 }
