@@ -61,7 +61,7 @@ export default function UserDetails() {
                         localStorage.removeItem('isAuthenticated');
                         setIsAuthenticated(false); // Update the isAuthenticated state
                         dispatch(clearUserDetails());
-                        // navigate('/login', { replace: true });
+                        navigate('/', { replace: true });
                         location.reload();
                     },
                     autoClose: 2000,
