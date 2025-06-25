@@ -44,6 +44,7 @@ export default function Board() {
                 setResponseTask(response.data.allTasks);
             } catch (error) {
                 console.error(error);
+                // toast.error('Failed to fetch tasks');
             }
         }
     };
@@ -59,6 +60,7 @@ export default function Board() {
                     setResponseStatus(response.data.getStatus);
                 } catch (error) {
                     console.error(error);
+                    toast.error('Failed to fetch status');
                 }
             }
         };
@@ -119,6 +121,7 @@ export default function Board() {
                 await axios.patch(`${serverUrl}/tasks/${droppedTask._id}`, { status: status.status }, {
                     withCredentials: true,
                 });
+                toast.success('Task updated successfully');
             } catch (error) {
                 console.error(error);
                 const revertedTasks = task.map((t) => {
@@ -128,6 +131,7 @@ export default function Board() {
                     return t;
                 });
                 setTasks(revertedTasks);
+                toast.error('Failed to update task');
             } finally {
                 setLoading(false);
                 setDragging(null);
@@ -176,8 +180,10 @@ export default function Board() {
                 });
                 handleCloseModal();
                 fetchTasks();
+                toast.success('Task updated successfully');
             } catch (error) {
                 console.error(error);
+                toast.error('Failed to update task');
             }
         } else {
             try {
@@ -193,8 +199,10 @@ export default function Board() {
                 });
                 handleCloseModal();
                 fetchTasks();
+                toast.success('Task created successfully');
             } catch (error) {
                 console.error(error);
+                toast.error('Failed to create task');
             }
         }
     };
@@ -206,13 +214,14 @@ export default function Board() {
             });
             handleCloseModal();
             fetchTasks();
+            toast.success('Task deleted successfully');
         } catch (error) {
             console.error(error);
+            toast.error('Failed to delete task');
         }
     };
 
     const handleCreateStatusSubmit = async (event) => {
-        // debugger
         event.preventDefault();
         try {
             const response = await axios.post(`${serverUrl}/status`, {
@@ -222,7 +231,6 @@ export default function Board() {
             }, {
                 withCredentials: true,
             });
-            console.log(response); // Check the response
             setShowCreateStatusModal(false);
             setNewStatus('');
             setNewStatusDescription('');
@@ -230,8 +238,10 @@ export default function Board() {
                 withCredentials: true,
             });
             setResponseStatus(getStatusResponse.data.getStatus);
+            toast.success('Status created successfully');
         } catch (error) {
-            console.error(error); // Check for any errors
+            console.error(error);
+            toast.error('Failed to create status');
         }
     };
 
@@ -244,7 +254,9 @@ export default function Board() {
     };
 
     const handleEditStatusSubmit = async (event) => {
+        debugger
         event.preventDefault();
+        console.log(editStatusId, editStatusValue, editStatusDescription, id)
         try {
             await axios.patch(`${serverUrl}/status/${editStatusId}`, {
                 status: editStatusValue,
@@ -258,13 +270,14 @@ export default function Board() {
                 withCredentials: true,
             });
             setResponseStatus(response.data.getStatus);
+            toast.success('Status updated successfully');
         } catch (error) {
             console.error(error);
+            toast.error('Failed to update status');
         }
     };
 
     const handleDeleteStatusModal = (status) => {
-        console.log('Delete status modal opened');
         setStatusToDelete(status);
         setShowDeleteStatusModal(true);
         setShowDropdown(null);
@@ -279,8 +292,13 @@ export default function Board() {
                 withCredentials: true,
             });
             setResponseStatus(response.data.getStatus);
+            if (response.data.getStatus.length === 0) {
+                window.location.reload();
+            }
+            toast.success('Status deleted successfully');
         } catch (error) {
             console.error(error);
+            toast.error('Failed to delete status');
         }
         setShowDeleteStatusModal(false);
         setStatusToDelete(null);
@@ -290,9 +308,9 @@ export default function Board() {
         setShowDropdown(showDropdown === id ? null : id);
     };
 
-
     return (
         <>
+            <ToastContainer />
             <div className='boardMenus flex justify-end items-center'>
                 <button type='button' className='createProjectBtn poppins-semibold' onClick={() => setShowCreateStatusModal(true)}>Add New Column</button>
             </div>

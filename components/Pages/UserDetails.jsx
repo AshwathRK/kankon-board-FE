@@ -19,7 +19,6 @@ export default function UserDetails() {
     const [isAuthenticated, setIsAuthenticated] = useState(true);
     const [fetched, setFetched] = useState(false);
 
-    console.log(userInfo)
     if (!userInfo) {
         const fetchUserDetails = async () => {
             try {
@@ -74,6 +73,25 @@ export default function UserDetails() {
         }
     };
 
+    const handleSave = async () => {
+    try {
+        const response = await axios.patch(`${serverUrl}/user`, formData, {
+            withCredentials: true,
+        });
+
+        if (response.data?.status) {
+            dispatch(addUserDetails(response.data.user));
+            setEditing(false);
+            toast.success(response.data.message);
+        } else {
+            throw new Error(response.data.message);
+        }
+    } catch (error) {
+        console.error("Error in handleSave:", error);
+        toast.error("Failed to update user details");
+    }
+};
+
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
@@ -114,7 +132,7 @@ export default function UserDetails() {
                     <div className="d-flex gap-2">
                         {!editing ? (
                             <button
-                                className="btn btn-primary"
+                                className="btn btn-primary disabled"
                                 onClick={() => setEditing(true)}
                             >
                                 Edit Profile
@@ -123,7 +141,7 @@ export default function UserDetails() {
                             <>
                                 <button
                                     className="btn btn-success"
-                                // onClick={handleSave}
+                                onClick={handleSave}
                                 >
                                     Save
                                 </button>
