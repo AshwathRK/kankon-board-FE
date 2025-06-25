@@ -53,7 +53,7 @@ export default function ResetPassword() {
 
     const handleResetPassword = async (e) => {
         e.preventDefault();
-        
+
         try {
             const response = await axios.post(`${serverUrl}/resetpassword`, {
                 email,
@@ -72,7 +72,6 @@ export default function ResetPassword() {
             toast.error(errMsg);
         }
     };
-
 
     return (
         <div className='w-full h-206 h-screen flex justify-center items-center loginPage bg-gray-200'>
