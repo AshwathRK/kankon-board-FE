@@ -75,10 +75,10 @@ export default function ResetPassword() {
 
 
     return (
-        <div className='w-full h-206  loginPage h-screen flex justify-center items-center loginPage bg-gray-200'>
-            <div className='w-340 loginPageForm flex rounded'>
-                <div className='w-2/5 login flex justify-center items-center border-r-1 border-gray-400'>
-                    <form className='flex loginForm flex-col justify-around h-70 w-100' onSubmit={(step === 1 && !isEmailSent) ? handleEmailSubmit : (step === 1 ? handleOtpSubmit : handleResetPassword)}>
+        <div className='w-full h-206 h-screen flex justify-center items-center loginPage bg-gray-200'>
+            <div className='w-340 flex rounded borders mx-10'>
+                <div className='w-2/5 resetPage flex justify-center items-center border-r-1 border-gray-400'>
+                    <form className='flex loginForm flex-col justify-around px-10 h-70 w-100' onSubmit={(step === 1 && !isEmailSent) ? handleEmailSubmit : (step === 1 ? handleOtpSubmit : handleResetPassword)}>
                         <h1 className='font-extrabold text-4xl primery'>Reset Password</h1>
                         <h2 className='font-bold text-lg text-gray-400'>
                             Go back to
@@ -93,7 +93,7 @@ export default function ResetPassword() {
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     disabled={isEmailSent}
-                                    className='border rounded px-2 py-1'
+                                    className='border rounded px-2 py-1 bg-white'
                                     required
                                 />
 
@@ -108,7 +108,7 @@ export default function ResetPassword() {
                                                 if (/^\d{0,6}$/.test(val)) setOtp(val);
                                             }}
                                             maxLength={6}
-                                            className='border rounded px-2 py-1'
+                                            className='border rounded px-2 py-1 bg-white'
                                             required
                                         />
                                     </>
@@ -141,7 +141,7 @@ export default function ResetPassword() {
                                         type={showPassword ? 'text' : 'password'}
                                         value={password}
                                         onChange={(e) => setNewPassword(e.target.value)}
-                                        className='border rounded px-2 py-1 w-full pr-10'
+                                        className='border rounded px-2 py-1 w-full pr-10 bg-white'
                                     />
                                     <button
                                         type='button'
@@ -158,7 +158,7 @@ export default function ResetPassword() {
                                         type={showConfirmPassword ? 'text' : 'password'}
                                         value={confirmPassword}
                                         onChange={(e) => setConfirmPassword(e.target.value)}
-                                        className='border rounded px-2 py-1 w-full pr-10'
+                                        className='border rounded px-2 py-1 w-full pr-10 bg-white'
                                     />
                                     <button
                                         type='button'
@@ -180,7 +180,7 @@ export default function ResetPassword() {
                     </form>
                 </div>
 
-                <div className='w-3/5 loginImage flex justify-center items-center'>
+                <div className='w-3/5 resetPageimage flex justify-center items-center'>
                     <img src="/Password_reset.png" className="w-180 image" alt="logo" />
                 </div>
             </div>

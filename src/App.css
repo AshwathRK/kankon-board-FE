@@ -385,3 +385,23 @@
     filter: brightness(0) invert(1);
     cursor: pointer;
 }
+
+
+
+@media only screen and (max-width: 850px) {
+    .resetPage{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .resetPageimage {
+        display: none;
+    }
+    .borders{
+        height: 500px;
+    }
+}
+
+.borders{
+    border: 2px solid var(--primary_color);
+}
