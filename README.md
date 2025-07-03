@@ -145,4 +145,4 @@ For any issues or feedback, feel free to reach out:
 
 **Ashwathaman R**
 📧 [ashwathaman.r6@gmail.com](mailto:ashwathaman.r6@gmail.com)
-🌐 [LinkedIn](https://www.linkedin.com/in/your-profile)
+🌐 [LinkedIn](https://linkedin.com/in/ashwathaman-r)
