@@ -227,7 +227,7 @@ export default function Project() {
                         {
                             projects.map((prod, index) => (
                                 <tr key={index} className='cursor-pointer hover:opacity-50' onClick={() => navigate(`/user/board/${prod._id}`)}>
-                                    <th scope="row">{index + 1}</th>
+                                    <th data-bs-title="Cilck here to open project" scope="row">{index + 1} </th>
                                     <td>{prod.title}</td>
                                     <td>{prod.description}</td>
                                     <td className='flex'>
