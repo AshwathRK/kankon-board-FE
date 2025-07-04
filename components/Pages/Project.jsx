@@ -226,7 +226,7 @@ export default function Project() {
                     <tbody>
                         {
                             projects.map((prod, index) => (
-                                <tr data-bs-title="Click Here" key={index} className='cursor-pointer hover:opacity-50' onClick={() => navigate(`/user/board/${prod._id}`)}>
+                                <tr key={index} className='cursor-pointer hover:opacity-50' onClick={() => navigate(`/user/board/${prod._id}`)}>
                                     <th scope="row">{index + 1} </th>
                                     <td>{prod.title}</td>
                                     <td>{prod.description}</td>

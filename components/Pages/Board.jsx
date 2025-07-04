@@ -241,7 +241,7 @@ export default function Board() {
             toast.success('Status created successfully');
         } catch (error) {
             console.error(error);
-            toast.error('Failed to create status');
+            toast.error(error.response.data?.message);
         }
     };
 
@@ -254,7 +254,6 @@ export default function Board() {
     };
 
     const handleEditStatusSubmit = async (event) => {
-        debugger
         event.preventDefault();
         console.log(editStatusId, editStatusValue, editStatusDescription, id)
         try {
